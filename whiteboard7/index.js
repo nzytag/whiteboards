@@ -9,5 +9,6 @@ exports.circleCheck = function (list) {
     fast = fast.next.next;
     if (fast === slow) return true;
   }
+  
   return false;
 };
