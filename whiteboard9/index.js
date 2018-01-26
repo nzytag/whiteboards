@@ -13,7 +13,7 @@ solution.find = function (offset, SLL) {
   let curr = SLL.head;
   for (let i = 1; i < diff; i++) {
     curr = curr.next;
-    if (!curr) return 'this node does not exist';
+    if (!curr) return 'not exists';
   }
   return curr;
 };

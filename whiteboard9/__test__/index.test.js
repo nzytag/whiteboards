@@ -18,7 +18,7 @@ describe('#Linked List ndth', () => {
     it('It should accept two arguments and return the correct node', () => {
       expect(solution.find(3, sll)).toBe(sll2);
     });
-    it('It should return null if SLL is not an object', () => {
+    it('It should return null if is not an object', () => {
       expect(solution.find(44, 'SLL')).toBeNull();
     });
     it('It should return null if offset is not a number', () => {
