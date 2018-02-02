@@ -1,35 +1,28 @@
 'use strict';
-
-const Node = require('./node.js');
+//this creates a stack and its a great scaffold for other projects.
+const Node = require('./node');
 
 module.exports = class {
-  constructor(maxSize = 1048) {
+  constructor() {
     this.top = null;
-    this.maxSize = maxSize;
-    this.size = 0;
   }
-  push(val) {
-    if (this.size === this.maxSize) throw new Error('stack overflow');
-
-    let node = new Node(val);
+  push(value) {
+    let node = new Node(value);
 
     node.next = this.top;
     this.top = node;
-    this.size++;
-    return this.top;
+    return this.top.value;
   }
+
   pop() {
-    if (!this.top) throw new Error('nothing to pop');
     let temp = this.top;
     this.top = temp.next;
     temp.next = null;
-    this.size--;
 
-    return temp;
+    return temp.value;
   }
 
   peek() {
-    if (!this.top) throw new Error('nothing to see');
     return this.top;
   }
 };

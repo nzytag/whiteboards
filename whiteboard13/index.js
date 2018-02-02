@@ -1,24 +1,18 @@
 'use strict';
-function Node(data) {
-  this.data = data;
-  this.next = null;
-}
 
-function dedupe(head) {
-  if (!head) return null;
-  if (!head.next) return head;
+const Stack = require ('./lib/stack.js');
+const SLL = require('./lib/sll.js');
 
-  let curr = head;
-  let prev = new Node();
+const removeDupes = module.exports = function (list) { 
+  if (!list.value) return null;
 
-  while (curr) {
-    if (prev.data === curr.data)
-      prev.next = curr.next;
-    else
-      prev = curr;
+  let stack = new Stack;
+  let result = new SLL;
 
-    curr = curr.next;
+  for (let current = list; current; current = current.next) {
+    if (!stack.top || current.value !== stack.top.value ) {
+      result.insertEnd(stack.push(current.value));
+    }
   }
-
-  return head;
-}
+  return result;
+};
