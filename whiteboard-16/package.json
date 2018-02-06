@@ -1,0 +1,19 @@
+{
+  "name": "whiteboard-16",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+"test": "jest --verbose -i",
+"lint": "eslint "
+},
+  "keywords": [],
+  "author": "Hector Norza",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}
