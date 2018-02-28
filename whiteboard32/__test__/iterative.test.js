@@ -2,7 +2,7 @@
 
 const solution = require('../iterative/solution.js');
 
-describe('recursively', () => {
+describe('iterative', () => {
   it('should return a value for the correct input', () => {
     expect(solution.fiboIter(4)).toEqual(3);
   });
